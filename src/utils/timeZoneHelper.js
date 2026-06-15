@@ -148,8 +148,9 @@ export function parseMatchDateTime(match) {
 
   const formattedTime = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}`;
 
-  // Get timezone offset for match city
-  const offset = getCityTimezoneOffset(match.city || match.venue);
+  // The scraped data from the source is strictly in PDT (UTC-7) regardless of venue.
+  // We force -07:00 here so the absolute Date object is correctly instantiated.
+  const offset = '-07:00';
 
   // Construct ISO string
   const isoStr = `${year}-${month}-${day}T${formattedTime}:00${offset}`;
@@ -166,7 +167,20 @@ export function formatMatchTime(match) {
   if (!matchTime) return match.time; // Fallback to raw string
 
   // Keep local match time as-is
-  const localTimeStr = match.time;
+  // Actually, we must format the true local time because the raw match.time is in PDT
+  const cityOffset = getCityTimezoneOffset(match.city || match.venue);
+  let ianaZone = 'America/New_York';
+  if (cityOffset === '-05:00') ianaZone = 'America/Chicago';
+  if (cityOffset === '-06:00') ianaZone = 'America/Mexico_City';
+  if (cityOffset === '-07:00') ianaZone = 'America/Los_Angeles';
+
+  const localTimeOptions = {
+    timeZone: ianaZone,
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: false
+  };
+  const localTimeStr = new Intl.DateTimeFormat('en-US', localTimeOptions).format(matchTime);
 
   // Convert to WIB (Asia/Jakarta timezone)
   const options = {
