@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  rnj-sport:
+    build: .
+    container_name: rnj-sport-container
+    ports:
+      - "5001:5001"
+    volumes:
+      - rnj-data:/usr/src/app/data
+    restart: unless-stopped
+
+volumes:
+  rnj-data:

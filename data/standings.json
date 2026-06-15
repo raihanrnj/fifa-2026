@@ -1,0 +1,590 @@
+[
+  {
+    "group": "Group A",
+    "teams": [
+      {
+        "rank": 1,
+        "name": "Mexico",
+        "flag": "https://api.fifa.com/api/v3/picture/flags-sq-1/MEX",
+        "played": 1,
+        "won": 1,
+        "drawn": 0,
+        "lost": 0,
+        "gd": 2,
+        "points": 3
+      },
+      {
+        "rank": 2,
+        "name": "Korea Republic",
+        "flag": "https://api.fifa.com/api/v3/picture/flags-sq-1/KOR",
+        "played": 1,
+        "won": 1,
+        "drawn": 0,
+        "lost": 0,
+        "gd": 1,
+        "points": 3
+      },
+      {
+        "rank": 3,
+        "name": "Czechia",
+        "flag": "https://api.fifa.com/api/v3/picture/flags-sq-1/CZE",
+        "played": 1,
+        "won": 0,
+        "drawn": 0,
+        "lost": 1,
+        "gd": -1,
+        "points": 0
+      },
+      {
+        "rank": 4,
+        "name": "South Africa",
+        "flag": "https://api.fifa.com/api/v3/picture/flags-sq-1/RSA",
+        "played": 1,
+        "won": 0,
+        "drawn": 0,
+        "lost": 1,
+        "gd": -2,
+        "points": 0
+      }
+    ]
+  },
+  {
+    "group": "Group B",
+    "teams": [
+      {
+        "rank": 1,
+        "name": "Bosnia and Herzegovina",
+        "flag": "https://api.fifa.com/api/v3/picture/flags-sq-1/BIH",
+        "played": 1,
+        "won": 0,
+        "drawn": 1,
+        "lost": 0,
+        "gd": 0,
+        "points": 1
+      },
+      {
+        "rank": 2,
+        "name": "Canada",
+        "flag": "https://api.fifa.com/api/v3/picture/flags-sq-1/CAN",
+        "played": 1,
+        "won": 0,
+        "drawn": 1,
+        "lost": 0,
+        "gd": 0,
+        "points": 1
+      },
+      {
+        "rank": 3,
+        "name": "Qatar",
+        "flag": "https://api.fifa.com/api/v3/picture/flags-sq-1/QAT",
+        "played": 1,
+        "won": 0,
+        "drawn": 1,
+        "lost": 0,
+        "gd": 0,
+        "points": 1
+      },
+      {
+        "rank": 4,
+        "name": "Switzerland",
+        "flag": "https://api.fifa.com/api/v3/picture/flags-sq-1/SUI",
+        "played": 1,
+        "won": 0,
+        "drawn": 1,
+        "lost": 0,
+        "gd": 0,
+        "points": 1
+      }
+    ]
+  },
+  {
+    "group": "Group C",
+    "teams": [
+      {
+        "rank": 1,
+        "name": "Scotland",
+        "flag": "https://api.fifa.com/api/v3/picture/flags-sq-1/SCO",
+        "played": 1,
+        "won": 1,
+        "drawn": 0,
+        "lost": 0,
+        "gd": 1,
+        "points": 3
+      },
+      {
+        "rank": 2,
+        "name": "Brazil",
+        "flag": "https://api.fifa.com/api/v3/picture/flags-sq-1/BRA",
+        "played": 1,
+        "won": 0,
+        "drawn": 1,
+        "lost": 0,
+        "gd": 0,
+        "points": 1
+      },
+      {
+        "rank": 3,
+        "name": "Morocco",
+        "flag": "https://api.fifa.com/api/v3/picture/flags-sq-1/MAR",
+        "played": 1,
+        "won": 0,
+        "drawn": 1,
+        "lost": 0,
+        "gd": 0,
+        "points": 1
+      },
+      {
+        "rank": 4,
+        "name": "Haiti",
+        "flag": "https://api.fifa.com/api/v3/picture/flags-sq-1/HAI",
+        "played": 1,
+        "won": 0,
+        "drawn": 0,
+        "lost": 1,
+        "gd": -1,
+        "points": 0
+      }
+    ]
+  },
+  {
+    "group": "Group D",
+    "teams": [
+      {
+        "rank": 1,
+        "name": "USA",
+        "flag": "https://api.fifa.com/api/v3/picture/flags-sq-1/USA",
+        "played": 1,
+        "won": 1,
+        "drawn": 0,
+        "lost": 0,
+        "gd": 3,
+        "points": 3
+      },
+      {
+        "rank": 2,
+        "name": "Australia",
+        "flag": "https://api.fifa.com/api/v3/picture/flags-sq-1/AUS",
+        "played": 1,
+        "won": 1,
+        "drawn": 0,
+        "lost": 0,
+        "gd": 2,
+        "points": 3
+      },
+      {
+        "rank": 3,
+        "name": "Türkiye",
+        "flag": "https://api.fifa.com/api/v3/picture/flags-sq-1/TUR",
+        "played": 1,
+        "won": 0,
+        "drawn": 0,
+        "lost": 1,
+        "gd": -2,
+        "points": 0
+      },
+      {
+        "rank": 4,
+        "name": "Paraguay",
+        "flag": "https://api.fifa.com/api/v3/picture/flags-sq-1/PAR",
+        "played": 1,
+        "won": 0,
+        "drawn": 0,
+        "lost": 1,
+        "gd": -3,
+        "points": 0
+      }
+    ]
+  },
+  {
+    "group": "Group E",
+    "teams": [
+      {
+        "rank": 1,
+        "name": "Côte d'Ivoire",
+        "flag": "https://api.fifa.com/api/v3/picture/flags-sq-1/CIV",
+        "played": 0,
+        "won": 0,
+        "drawn": 0,
+        "lost": 0,
+        "gd": 0,
+        "points": 0
+      },
+      {
+        "rank": 2,
+        "name": "Curaçao",
+        "flag": "https://api.fifa.com/api/v3/picture/flags-sq-1/CUW",
+        "played": 0,
+        "won": 0,
+        "drawn": 0,
+        "lost": 0,
+        "gd": 0,
+        "points": 0
+      },
+      {
+        "rank": 3,
+        "name": "Ecuador",
+        "flag": "https://api.fifa.com/api/v3/picture/flags-sq-1/ECU",
+        "played": 0,
+        "won": 0,
+        "drawn": 0,
+        "lost": 0,
+        "gd": 0,
+        "points": 0
+      },
+      {
+        "rank": 4,
+        "name": "Germany",
+        "flag": "https://api.fifa.com/api/v3/picture/flags-sq-1/GER",
+        "played": 0,
+        "won": 0,
+        "drawn": 0,
+        "lost": 0,
+        "gd": 0,
+        "points": 0
+      }
+    ]
+  },
+  {
+    "group": "Group F",
+    "teams": [
+      {
+        "rank": 1,
+        "name": "Japan",
+        "flag": "https://api.fifa.com/api/v3/picture/flags-sq-1/JPN",
+        "played": 0,
+        "won": 0,
+        "drawn": 0,
+        "lost": 0,
+        "gd": 0,
+        "points": 0
+      },
+      {
+        "rank": 2,
+        "name": "Netherlands",
+        "flag": "https://api.fifa.com/api/v3/picture/flags-sq-1/NED",
+        "played": 0,
+        "won": 0,
+        "drawn": 0,
+        "lost": 0,
+        "gd": 0,
+        "points": 0
+      },
+      {
+        "rank": 3,
+        "name": "Sweden",
+        "flag": "https://api.fifa.com/api/v3/picture/flags-sq-1/SWE",
+        "played": 0,
+        "won": 0,
+        "drawn": 0,
+        "lost": 0,
+        "gd": 0,
+        "points": 0
+      },
+      {
+        "rank": 4,
+        "name": "Tunisia",
+        "flag": "https://api.fifa.com/api/v3/picture/flags-sq-1/TUN",
+        "played": 0,
+        "won": 0,
+        "drawn": 0,
+        "lost": 0,
+        "gd": 0,
+        "points": 0
+      }
+    ]
+  },
+  {
+    "group": "Group G",
+    "teams": [
+      {
+        "rank": 1,
+        "name": "Belgium",
+        "flag": "https://api.fifa.com/api/v3/picture/flags-sq-1/BEL",
+        "played": 0,
+        "won": 0,
+        "drawn": 0,
+        "lost": 0,
+        "gd": 0,
+        "points": 0
+      },
+      {
+        "rank": 2,
+        "name": "Egypt",
+        "flag": "https://api.fifa.com/api/v3/picture/flags-sq-1/EGY",
+        "played": 0,
+        "won": 0,
+        "drawn": 0,
+        "lost": 0,
+        "gd": 0,
+        "points": 0
+      },
+      {
+        "rank": 3,
+        "name": "IR Iran",
+        "flag": "https://api.fifa.com/api/v3/picture/flags-sq-1/IRN",
+        "played": 0,
+        "won": 0,
+        "drawn": 0,
+        "lost": 0,
+        "gd": 0,
+        "points": 0
+      },
+      {
+        "rank": 4,
+        "name": "New Zealand",
+        "flag": "https://api.fifa.com/api/v3/picture/flags-sq-1/NZL",
+        "played": 0,
+        "won": 0,
+        "drawn": 0,
+        "lost": 0,
+        "gd": 0,
+        "points": 0
+      }
+    ]
+  },
+  {
+    "group": "Group H",
+    "teams": [
+      {
+        "rank": 1,
+        "name": "Cabo Verde",
+        "flag": "https://api.fifa.com/api/v3/picture/flags-sq-1/CPV",
+        "played": 0,
+        "won": 0,
+        "drawn": 0,
+        "lost": 0,
+        "gd": 0,
+        "points": 0
+      },
+      {
+        "rank": 2,
+        "name": "Saudi Arabia",
+        "flag": "https://api.fifa.com/api/v3/picture/flags-sq-1/KSA",
+        "played": 0,
+        "won": 0,
+        "drawn": 0,
+        "lost": 0,
+        "gd": 0,
+        "points": 0
+      },
+      {
+        "rank": 3,
+        "name": "Spain",
+        "flag": "https://api.fifa.com/api/v3/picture/flags-sq-1/ESP",
+        "played": 0,
+        "won": 0,
+        "drawn": 0,
+        "lost": 0,
+        "gd": 0,
+        "points": 0
+      },
+      {
+        "rank": 4,
+        "name": "Uruguay",
+        "flag": "https://api.fifa.com/api/v3/picture/flags-sq-1/URU",
+        "played": 0,
+        "won": 0,
+        "drawn": 0,
+        "lost": 0,
+        "gd": 0,
+        "points": 0
+      }
+    ]
+  },
+  {
+    "group": "Group I",
+    "teams": [
+      {
+        "rank": 1,
+        "name": "France",
+        "flag": "https://api.fifa.com/api/v3/picture/flags-sq-1/FRA",
+        "played": 0,
+        "won": 0,
+        "drawn": 0,
+        "lost": 0,
+        "gd": 0,
+        "points": 0
+      },
+      {
+        "rank": 2,
+        "name": "Iraq",
+        "flag": "https://api.fifa.com/api/v3/picture/flags-sq-1/IRQ",
+        "played": 0,
+        "won": 0,
+        "drawn": 0,
+        "lost": 0,
+        "gd": 0,
+        "points": 0
+      },
+      {
+        "rank": 3,
+        "name": "Norway",
+        "flag": "https://api.fifa.com/api/v3/picture/flags-sq-1/NOR",
+        "played": 0,
+        "won": 0,
+        "drawn": 0,
+        "lost": 0,
+        "gd": 0,
+        "points": 0
+      },
+      {
+        "rank": 4,
+        "name": "Senegal",
+        "flag": "https://api.fifa.com/api/v3/picture/flags-sq-1/SEN",
+        "played": 0,
+        "won": 0,
+        "drawn": 0,
+        "lost": 0,
+        "gd": 0,
+        "points": 0
+      }
+    ]
+  },
+  {
+    "group": "Group J",
+    "teams": [
+      {
+        "rank": 1,
+        "name": "Algeria",
+        "flag": "https://api.fifa.com/api/v3/picture/flags-sq-1/ALG",
+        "played": 0,
+        "won": 0,
+        "drawn": 0,
+        "lost": 0,
+        "gd": 0,
+        "points": 0
+      },
+      {
+        "rank": 2,
+        "name": "Argentina",
+        "flag": "https://api.fifa.com/api/v3/picture/flags-sq-1/ARG",
+        "played": 0,
+        "won": 0,
+        "drawn": 0,
+        "lost": 0,
+        "gd": 0,
+        "points": 0
+      },
+      {
+        "rank": 3,
+        "name": "Austria",
+        "flag": "https://api.fifa.com/api/v3/picture/flags-sq-1/AUT",
+        "played": 0,
+        "won": 0,
+        "drawn": 0,
+        "lost": 0,
+        "gd": 0,
+        "points": 0
+      },
+      {
+        "rank": 4,
+        "name": "Jordan",
+        "flag": "https://api.fifa.com/api/v3/picture/flags-sq-1/JOR",
+        "played": 0,
+        "won": 0,
+        "drawn": 0,
+        "lost": 0,
+        "gd": 0,
+        "points": 0
+      }
+    ]
+  },
+  {
+    "group": "Group K",
+    "teams": [
+      {
+        "rank": 1,
+        "name": "Colombia",
+        "flag": "https://api.fifa.com/api/v3/picture/flags-sq-1/COL",
+        "played": 0,
+        "won": 0,
+        "drawn": 0,
+        "lost": 0,
+        "gd": 0,
+        "points": 0
+      },
+      {
+        "rank": 2,
+        "name": "Congo DR",
+        "flag": "https://api.fifa.com/api/v3/picture/flags-sq-1/COD",
+        "played": 0,
+        "won": 0,
+        "drawn": 0,
+        "lost": 0,
+        "gd": 0,
+        "points": 0
+      },
+      {
+        "rank": 3,
+        "name": "Portugal",
+        "flag": "https://api.fifa.com/api/v3/picture/flags-sq-1/POR",
+        "played": 0,
+        "won": 0,
+        "drawn": 0,
+        "lost": 0,
+        "gd": 0,
+        "points": 0
+      },
+      {
+        "rank": 4,
+        "name": "Uzbekistan",
+        "flag": "https://api.fifa.com/api/v3/picture/flags-sq-1/UZB",
+        "played": 0,
+        "won": 0,
+        "drawn": 0,
+        "lost": 0,
+        "gd": 0,
+        "points": 0
+      }
+    ]
+  },
+  {
+    "group": "Group L",
+    "teams": [
+      {
+        "rank": 1,
+        "name": "Croatia",
+        "flag": "https://api.fifa.com/api/v3/picture/flags-sq-1/CRO",
+        "played": 0,
+        "won": 0,
+        "drawn": 0,
+        "lost": 0,
+        "gd": 0,
+        "points": 0
+      },
+      {
+        "rank": 2,
+        "name": "England",
+        "flag": "https://api.fifa.com/api/v3/picture/flags-sq-1/ENG",
+        "played": 0,
+        "won": 0,
+        "drawn": 0,
+        "lost": 0,
+        "gd": 0,
+        "points": 0
+      },
+      {
+        "rank": 3,
+        "name": "Ghana",
+        "flag": "https://api.fifa.com/api/v3/picture/flags-sq-1/GHA",
+        "played": 0,
+        "won": 0,
+        "drawn": 0,
+        "lost": 0,
+        "gd": 0,
+        "points": 0
+      },
+      {
+        "rank": 4,
+        "name": "Panama",
+        "flag": "https://api.fifa.com/api/v3/picture/flags-sq-1/PAN",
+        "played": 0,
+        "won": 0,
+        "drawn": 0,
+        "lost": 0,
+        "gd": 0,
+        "points": 0
+      }
+    ]
+  }
+]

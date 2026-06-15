@@ -1,0 +1,332 @@
+{
+  "roundOf32": [
+    {
+      "id": "bracket-match-r32-1",
+      "matchNumber": 73,
+      "team1": "2A",
+      "team2": "2B",
+      "score1": null,
+      "score2": null,
+      "winner": null,
+      "time": "12:00 PM"
+    },
+    {
+      "id": "bracket-match-r32-2",
+      "matchNumber": 74,
+      "team1": "1C",
+      "team2": "2F",
+      "score1": null,
+      "score2": null,
+      "winner": null,
+      "time": "10:00 AM"
+    },
+    {
+      "id": "bracket-match-r32-3",
+      "matchNumber": 75,
+      "team1": "1E",
+      "team2": "3ABCDF",
+      "score1": null,
+      "score2": null,
+      "winner": null,
+      "time": "1:30 PM"
+    },
+    {
+      "id": "bracket-match-r32-4",
+      "matchNumber": 76,
+      "team1": "1F",
+      "team2": "2C",
+      "score1": null,
+      "score2": null,
+      "winner": null,
+      "time": "6:00 PM"
+    },
+    {
+      "id": "bracket-match-r32-5",
+      "matchNumber": 77,
+      "team1": "2E",
+      "team2": "2I",
+      "score1": null,
+      "score2": null,
+      "winner": null,
+      "time": "10:00 AM"
+    },
+    {
+      "id": "bracket-match-r32-6",
+      "matchNumber": 78,
+      "team1": "1I",
+      "team2": "3CDFGH",
+      "score1": null,
+      "score2": null,
+      "winner": null,
+      "time": "2:00 PM"
+    },
+    {
+      "id": "bracket-match-r32-7",
+      "matchNumber": 79,
+      "team1": "1A",
+      "team2": "3CEFHI",
+      "score1": null,
+      "score2": null,
+      "winner": null,
+      "time": "6:00 PM"
+    },
+    {
+      "id": "bracket-match-r32-8",
+      "matchNumber": 80,
+      "team1": "1L",
+      "team2": "3EHIJK",
+      "score1": null,
+      "score2": null,
+      "winner": null,
+      "time": "9:00 AM"
+    },
+    {
+      "id": "bracket-match-r32-9",
+      "matchNumber": 81,
+      "team1": "1G",
+      "team2": "3AEHIJ",
+      "score1": null,
+      "score2": null,
+      "winner": null,
+      "time": "1:00 PM"
+    },
+    {
+      "id": "bracket-match-r32-10",
+      "matchNumber": 82,
+      "team1": "1D",
+      "team2": "3BEFIJ",
+      "score1": null,
+      "score2": null,
+      "winner": null,
+      "time": "5:00 PM"
+    },
+    {
+      "id": "bracket-match-r32-11",
+      "matchNumber": 83,
+      "team1": "1H",
+      "team2": "2J",
+      "score1": null,
+      "score2": null,
+      "winner": null,
+      "time": "12:00 PM"
+    },
+    {
+      "id": "bracket-match-r32-12",
+      "matchNumber": 84,
+      "team1": "2K",
+      "team2": "2L",
+      "score1": null,
+      "score2": null,
+      "winner": null,
+      "time": "4:00 PM"
+    },
+    {
+      "id": "bracket-match-r32-13",
+      "matchNumber": 85,
+      "team1": "1B",
+      "team2": "3EFGIJ",
+      "score1": null,
+      "score2": null,
+      "winner": null,
+      "time": "8:00 PM"
+    },
+    {
+      "id": "bracket-match-r32-14",
+      "matchNumber": 86,
+      "team1": "2D",
+      "team2": "2G",
+      "score1": null,
+      "score2": null,
+      "winner": null,
+      "time": "11:00 AM"
+    },
+    {
+      "id": "bracket-match-r32-15",
+      "matchNumber": 87,
+      "team1": "1J",
+      "team2": "2H",
+      "score1": null,
+      "score2": null,
+      "winner": null,
+      "time": "3:00 PM"
+    },
+    {
+      "id": "bracket-match-r32-16",
+      "matchNumber": 88,
+      "team1": "1K",
+      "team2": "3DEIJL",
+      "score1": null,
+      "score2": null,
+      "winner": null,
+      "time": "6:30 PM"
+    }
+  ],
+  "roundOf16": [
+    {
+      "id": "bracket-match-r16-1",
+      "matchNumber": 89,
+      "team1": "W73",
+      "team2": "W75",
+      "score1": null,
+      "score2": null,
+      "winner": null,
+      "time": "10:00 AM"
+    },
+    {
+      "id": "bracket-match-r16-2",
+      "matchNumber": 90,
+      "team1": "W74",
+      "team2": "W77",
+      "score1": null,
+      "score2": null,
+      "winner": null,
+      "time": "2:00 PM"
+    },
+    {
+      "id": "bracket-match-r16-3",
+      "matchNumber": 91,
+      "team1": "W76",
+      "team2": "W78",
+      "score1": null,
+      "score2": null,
+      "winner": null,
+      "time": "1:00 PM"
+    },
+    {
+      "id": "bracket-match-r16-4",
+      "matchNumber": 92,
+      "team1": "W79",
+      "team2": "W80",
+      "score1": null,
+      "score2": null,
+      "winner": null,
+      "time": "5:00 PM"
+    },
+    {
+      "id": "bracket-match-r16-5",
+      "matchNumber": 93,
+      "team1": "W83",
+      "team2": "W84",
+      "score1": null,
+      "score2": null,
+      "winner": null,
+      "time": "12:00 PM"
+    },
+    {
+      "id": "bracket-match-r16-6",
+      "matchNumber": 94,
+      "team1": "W81",
+      "team2": "W82",
+      "score1": null,
+      "score2": null,
+      "winner": null,
+      "time": "5:00 PM"
+    },
+    {
+      "id": "bracket-match-r16-7",
+      "matchNumber": 95,
+      "team1": "W86",
+      "team2": "W88",
+      "score1": null,
+      "score2": null,
+      "winner": null,
+      "time": "9:00 AM"
+    },
+    {
+      "id": "bracket-match-r16-8",
+      "matchNumber": 96,
+      "team1": "W85",
+      "team2": "W87",
+      "score1": null,
+      "score2": null,
+      "winner": null,
+      "time": "1:00 PM"
+    }
+  ],
+  "quarterFinals": [
+    {
+      "id": "bracket-match-qf-1",
+      "matchNumber": 97,
+      "team1": "W89",
+      "team2": "W90",
+      "score1": null,
+      "score2": null,
+      "winner": null,
+      "time": "1:00 PM"
+    },
+    {
+      "id": "bracket-match-qf-2",
+      "matchNumber": 98,
+      "team1": "W93",
+      "team2": "W94",
+      "score1": null,
+      "score2": null,
+      "winner": null,
+      "time": "12:00 PM"
+    },
+    {
+      "id": "bracket-match-qf-3",
+      "matchNumber": 99,
+      "team1": "W91",
+      "team2": "W92",
+      "score1": null,
+      "score2": null,
+      "winner": null,
+      "time": "2:00 PM"
+    },
+    {
+      "id": "bracket-match-qf-4",
+      "matchNumber": 100,
+      "team1": "W95",
+      "team2": "W96",
+      "score1": null,
+      "score2": null,
+      "winner": null,
+      "time": "6:00 PM"
+    }
+  ],
+  "semiFinals": [
+    {
+      "id": "bracket-match-sf-1",
+      "matchNumber": 101,
+      "team1": "W97",
+      "team2": "W98",
+      "score1": null,
+      "score2": null,
+      "winner": null,
+      "time": "12:00 PM"
+    },
+    {
+      "id": "bracket-match-sf-2",
+      "matchNumber": 102,
+      "team1": "W99",
+      "team2": "W100",
+      "score1": null,
+      "score2": null,
+      "winner": null,
+      "time": "12:00 PM"
+    }
+  ],
+  "finals": {
+    "thirdPlace": {
+      "id": "bracket-match-tp-1",
+      "matchNumber": 103,
+      "team1": "RU101",
+      "team2": "RU102",
+      "score1": null,
+      "score2": null,
+      "winner": null,
+      "time": "2:00 PM"
+    },
+    "final": {
+      "id": "bracket-match-fn-1",
+      "matchNumber": 104,
+      "team1": "W101",
+      "team2": "W102",
+      "score1": null,
+      "score2": null,
+      "winner": null,
+      "time": "12:00 PM"
+    }
+  }
+}
