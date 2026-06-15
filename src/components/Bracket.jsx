@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
-import { GitFork, Calendar, MapPin, Award } from 'lucide-react';
+import { Trophy } from 'lucide-react';
 import { parseMatchDateTime } from '../utils/timeZoneHelper';
+import { getTranslation } from '../utils/i18n';
 
-function Bracket({ bracket }) {
+function Bracket({ bracket, lang }) {
   const [selectedRoundTab, setSelectedRoundTab] = useState('r32'); // For mobile list view
 
   if (!bracket) {
     return (
       <div className="card" style={{ textAlign: 'center', padding: '40px' }}>
-        <p>Data bracket belum tersedia.</p>
+        <p>{getTranslation(lang, 'bracketNotAvailable')}</p>
       </div>
     );
   }
@@ -16,13 +17,13 @@ function Bracket({ bracket }) {
   const { roundOf32 = [], roundOf16 = [], quarterFinals = [], semiFinals = [], finals = {} } = bracket;
 
   const rounds = [
-    { key: 'r32', title: 'Round of 32', data: roundOf32 },
-    { key: 'r16', title: 'Round of 16', data: roundOf16 },
-    { key: 'qf', title: 'Quarter-finals', data: quarterFinals },
-    { key: 'sf', title: 'Semi-finals', data: semiFinals },
+    { key: 'r32', title: getTranslation(lang, 'round32'), data: roundOf32 },
+    { key: 'r16', title: getTranslation(lang, 'round16'), data: roundOf16 },
+    { key: 'qf', title: getTranslation(lang, 'quarterFinal'), data: quarterFinals },
+    { key: 'sf', title: getTranslation(lang, 'semiFinal'), data: semiFinals },
     { 
       key: 'fn', 
-      title: 'Final & 3rd Place', 
+      title: getTranslation(lang, 'final'), 
       data: [
         ...(finals.final ? [finals.final] : []),
         ...(finals.thirdPlace ? [finals.thirdPlace] : [])
@@ -55,7 +56,7 @@ function Bracket({ bracket }) {
     return (
       <div key={match.id} className="bracket-match-node">
         <div className="bracket-meta">
-          <span>Match #{match.matchNumber}</span>
+          <span>{getTranslation(lang, 'match')} #{match.matchNumber}</span>
           {match.time && <span>{match.time} Local</span>}
         </div>
         
@@ -104,8 +105,8 @@ function Bracket({ bracket }) {
     <div>
       {/* Title */}
       <div className="page-title-section">
-        <h1 className="page-title">Knockout Bracket</h1>
-        <p className="page-subtitle">Road to the Final — Round of 32 to the World Cup Final.</p>
+        <h1 className="page-title">{getTranslation(lang, 'knockoutBracket')}</h1>
+        <p className="page-subtitle">{getTranslation(lang, 'roadToFinal')}</p>
       </div>
 
       {/* Desktop Column Bracket View */}
@@ -119,7 +120,7 @@ function Bracket({ bracket }) {
           <div className="bracket-container">
             {/* Column 1: Round of 32 */}
             <div className="bracket-column">
-              <h3 className="bracket-header">Round of 32</h3>
+              <h3 className="bracket-header">{getTranslation(lang, 'round32')}</h3>
               <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'space-around' }}>
                 {roundOf32.map(match => renderMatchNode(match))}
               </div>
@@ -127,7 +128,7 @@ function Bracket({ bracket }) {
 
             {/* Column 2: Round of 16 */}
             <div className="bracket-column">
-              <h3 className="bracket-header">Round of 16</h3>
+              <h3 className="bracket-header">{getTranslation(lang, 'round16')}</h3>
               <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'space-around' }}>
                 {roundOf16.map(match => renderMatchNode(match))}
               </div>
@@ -135,7 +136,7 @@ function Bracket({ bracket }) {
 
             {/* Column 3: Quarter-finals */}
             <div className="bracket-column">
-              <h3 className="bracket-header">Quarter-finals</h3>
+              <h3 className="bracket-header">{getTranslation(lang, 'quarterFinal')}</h3>
               <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'space-around' }}>
                 {quarterFinals.map(match => renderMatchNode(match))}
               </div>
@@ -143,7 +144,7 @@ function Bracket({ bracket }) {
 
             {/* Column 4: Semi-finals */}
             <div className="bracket-column">
-              <h3 className="bracket-header">Semi-finals</h3>
+              <h3 className="bracket-header">{getTranslation(lang, 'semiFinal')}</h3>
               <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'space-around' }}>
                 {semiFinals.map(match => renderMatchNode(match))}
               </div>
@@ -151,11 +152,11 @@ function Bracket({ bracket }) {
 
             {/* Column 5: Finals */}
             <div className="bracket-column" style={{ minWidth: '260px' }}>
-              <h3 className="bracket-header">Finals</h3>
+              <h3 className="bracket-header">{getTranslation(lang, 'final')}</h3>
               <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'center', gap: '40px' }}>
                 {finals.final && (
                   <div>
-                    <h4 style={{ fontSize: '0.8rem', textTransform: 'uppercase', color: 'var(--color-gold)', textAlign: 'center', marginBottom: '4px', fontWeight: 800 }}>🏆 FINAL</h4>
+                    <h4 style={{ fontSize: '0.8rem', textTransform: 'uppercase', color: 'var(--color-gold)', textAlign: 'center', marginBottom: '4px', fontWeight: 800 }}>🏆 {getTranslation(lang, 'final')}</h4>
                     {renderMatchNode(finals.final)}
                   </div>
                 )}

@@ -5,9 +5,11 @@ import Schedule from './components/Schedule';
 import Standings from './components/Standings';
 import Bracket from './components/Bracket';
 import { processSchedule, processBracket } from './utils/timeZoneHelper';
+import { getTranslation } from './utils/i18n';
 
 function App() {
   const [activeTab, setActiveTab] = useState('dashboard');
+  const [lang, setLang] = useState('id');
   const [schedule, setSchedule] = useState([]);
   const [standings, setStandings] = useState([]);
   const [bracket, setBracket] = useState(null);
@@ -63,7 +65,7 @@ function App() {
       {/* Navigation Header */}
       <nav className="navbar">
         <div className="navbar-container">
-          <a href="#" className="brand" onClick={() => setActiveTab('dashboard')}>
+          <a href="#" className="brand" onClick={() => { setActiveTab('dashboard'); handleRefresh(); }}>
             <img src="/logo.png" alt="RNJ Sport Logo" className="logo-img" />
           </a>
 
@@ -73,28 +75,28 @@ function App() {
               onClick={() => setActiveTab('dashboard')}
             >
               <LayoutDashboard size={18} />
-              <span>Dashboard</span>
+              <span>{getTranslation(lang, 'dashboard')}</span>
             </button>
             <button 
               className={`nav-item ${activeTab === 'schedule' ? 'active' : ''}`}
               onClick={() => setActiveTab('schedule')}
             >
               <Calendar size={18} />
-              <span>Schedule & Results</span>
+              <span>{getTranslation(lang, 'schedule')}</span>
             </button>
             <button 
               className={`nav-item ${activeTab === 'standings' ? 'active' : ''}`}
               onClick={() => setActiveTab('standings')}
             >
               <BarChart2 size={18} />
-              <span>Standings</span>
+              <span>{getTranslation(lang, 'standings')}</span>
             </button>
             <button 
               className={`nav-item ${activeTab === 'bracket' ? 'active' : ''}`}
               onClick={() => setActiveTab('bracket')}
             >
               <GitFork size={18} />
-              <span>Bracket</span>
+              <span>{getTranslation(lang, 'bracket')}</span>
             </button>
           </div>
 
@@ -102,17 +104,20 @@ function App() {
             {lastUpdated && (
               <span className="last-updated-text" style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', display: 'flex', alignItems: 'center', gap: '4px' }}>
                 <Clock size={12} />
-                Synced: {lastUpdated}
+                {getTranslation(lang, 'synced')} {lastUpdated}
               </span>
             )}
+            {/* Language Toggle */}
             <button 
-              className={`refresh-btn ${refreshing ? 'loading' : ''}`}
-              onClick={handleRefresh}
-              title="Scrape latest data now"
-              disabled={refreshing}
+              className="refresh-btn"
+              onClick={() => setLang(lang === 'id' ? 'en' : 'id')}
+              title="Toggle Language"
+              style={{ fontWeight: 800, fontSize: '0.9rem', width: '40px' }}
             >
-              <RefreshCw size={18} />
+              {lang.toUpperCase()}
             </button>
+            {/* Hidden stealth sync indicator */}
+            {refreshing && <RefreshCw size={14} className="loading" style={{ color: 'var(--color-primary-light)' }} />}
           </div>
         </div>
       </nav>
@@ -145,52 +150,53 @@ function App() {
                 schedule={schedule} 
                 standings={standings} 
                 setActiveTab={setActiveTab} 
+                lang={lang}
               />
             )}
             {activeTab === 'schedule' && (
-              <Schedule schedule={schedule} />
+              <Schedule schedule={schedule} lang={lang} />
             )}
             {activeTab === 'standings' && (
-              <Standings standings={standings} />
+              <Standings standings={standings} lang={lang} />
             )}
             {activeTab === 'bracket' && (
-              <Bracket bracket={bracket} />
+              <Bracket bracket={bracket} lang={lang} />
             )}
           </>
         )}
       </main>
 
       {/* Mobile Bottom Navigation Bar */}
-      <div className="mobile-bottom-nav">
+      <nav className="mobile-bottom-nav">
         <button 
           className={`mobile-nav-item ${activeTab === 'dashboard' ? 'active' : ''}`}
           onClick={() => setActiveTab('dashboard')}
         >
           <LayoutDashboard size={20} />
-          <span>Dashboard</span>
+          <span>{getTranslation(lang, 'dashboard')}</span>
         </button>
         <button 
           className={`mobile-nav-item ${activeTab === 'schedule' ? 'active' : ''}`}
           onClick={() => setActiveTab('schedule')}
         >
           <Calendar size={20} />
-          <span>Schedule</span>
+          <span>{getTranslation(lang, 'schedule')}</span>
         </button>
         <button 
           className={`mobile-nav-item ${activeTab === 'standings' ? 'active' : ''}`}
           onClick={() => setActiveTab('standings')}
         >
           <BarChart2 size={20} />
-          <span>Standings</span>
+          <span>{getTranslation(lang, 'standings')}</span>
         </button>
         <button 
           className={`mobile-nav-item ${activeTab === 'bracket' ? 'active' : ''}`}
           onClick={() => setActiveTab('bracket')}
         >
           <GitFork size={20} />
-          <span>Bracket</span>
+          <span>{getTranslation(lang, 'bracket')}</span>
         </button>
-      </div>
+      </nav>
 
       {/* Footer */}
       <footer style={{
@@ -202,12 +208,12 @@ function App() {
         fontSize: '0.85rem'
       }}>
         <div style={{ maxWidth: '1280px', margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '12px' }}>
-          <p>© 2026 RNJ Sport FIFA World Cup Monitor. Built by Raihan.</p>
+          <p>{getTranslation(lang, 'footerBuild')}</p>
           <div style={{ display: 'flex', gap: '16px' }}>
-            <a href="#" onClick={() => setActiveTab('dashboard')} style={{ fontWeight: 600 }}>Home</a>
-            <a href="#" onClick={() => setActiveTab('schedule')} style={{ fontWeight: 600 }}>Jadwal</a>
-            <a href="#" onClick={() => setActiveTab('standings')} style={{ fontWeight: 600 }}>Standings</a>
-            <a href="#" onClick={() => setActiveTab('bracket')} style={{ fontWeight: 600 }}>Bracket</a>
+            <a href="#" onClick={() => setActiveTab('dashboard')} style={{ fontWeight: 600 }}>{getTranslation(lang, 'home')}</a>
+            <a href="#" onClick={() => setActiveTab('schedule')} style={{ fontWeight: 600 }}>{getTranslation(lang, 'schedule')}</a>
+            <a href="#" onClick={() => setActiveTab('standings')} style={{ fontWeight: 600 }}>{getTranslation(lang, 'standings')}</a>
+            <a href="#" onClick={() => setActiveTab('bracket')} style={{ fontWeight: 600 }}>{getTranslation(lang, 'bracket')}</a>
           </div>
         </div>
       </footer>

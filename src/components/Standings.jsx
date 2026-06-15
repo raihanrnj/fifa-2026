@@ -1,13 +1,14 @@
 import React from 'react';
 import { Award, Info } from 'lucide-react';
+import { getTranslation } from '../utils/i18n';
 
-function Standings({ standings }) {
+function Standings({ standings, lang }) {
   return (
     <div>
       {/* Title */}
       <div className="page-title-section">
-        <h1 className="page-title">Group Standings</h1>
-        <p className="page-subtitle">Live standings across all 12 groups in the FIFA World Cup 2026.</p>
+        <h1 className="page-title">{getTranslation(lang, 'groupStandings')}</h1>
+        <p className="page-subtitle">{getTranslation(lang, 'liveStandingsDesc')}</p>
       </div>
 
       {/* Legend & Info Card */}
@@ -26,18 +27,18 @@ function Standings({ standings }) {
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
           <Info size={20} style={{ color: 'var(--color-primary-light)' }} />
           <span style={{ fontSize: '0.9rem', fontWeight: 600, color: 'var(--text-secondary)' }}>
-            Qualification Key:
+            {getTranslation(lang, 'qualificationKey')}
           </span>
         </div>
 
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '16px', fontSize: '0.85rem' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
             <span style={{ display: 'inline-block', width: '12px', height: '12px', borderRadius: '3px', backgroundColor: 'var(--color-green-qualified)' }}></span>
-            <span style={{ color: 'var(--text-secondary)', fontWeight: 500 }}>Top 2 (Automatic Qualification)</span>
+            <span style={{ color: 'var(--text-secondary)', fontWeight: 500 }}>{getTranslation(lang, 'autoQualify')}</span>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
             <span style={{ display: 'inline-block', width: '12px', height: '12px', borderRadius: '3px', backgroundColor: 'var(--color-gold)' }}></span>
-            <span style={{ color: 'var(--text-secondary)', fontWeight: 500 }}>Best 3rd Place Contenders</span>
+            <span style={{ color: 'var(--text-secondary)', fontWeight: 500 }}>{getTranslation(lang, 'bestThird')}</span>
           </div>
         </div>
       </div>
@@ -57,13 +58,13 @@ function Standings({ standings }) {
               <table className="group-table">
                 <thead>
                   <tr>
-                    <th className="team-col">Team</th>
-                    <th title="Played">P</th>
-                    <th title="Won">W</th>
-                    <th title="Drawn">D</th>
-                    <th title="Lost">L</th>
-                    <th title="Goal Difference">GD</th>
-                    <th title="Points">Pts</th>
+                    <th className="team-col">{getTranslation(lang, 'team')}</th>
+                    <th title="Played">{getTranslation(lang, 'played')}</th>
+                    <th title="Won">{getTranslation(lang, 'won')}</th>
+                    <th title="Drawn">{getTranslation(lang, 'drawn')}</th>
+                    <th title="Lost">{getTranslation(lang, 'lost')}</th>
+                    <th title="Goal Difference">{getTranslation(lang, 'gd')}</th>
+                    <th title="Points">{getTranslation(lang, 'pts')}</th>
                   </tr>
                 </thead>
                 <tbody>

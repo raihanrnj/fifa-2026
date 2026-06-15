@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Trophy, Users, Tv, Calendar, ArrowRight, Play, CheckCircle } from 'lucide-react';
+import { ArrowRight, AlertCircle, Clock } from 'lucide-react';
 import { parseMatchDateTime, formatMatchTime, getTodayDateStringWIB } from '../utils/timeZoneHelper';
+import { getTranslation } from '../utils/i18n';
 
-function Dashboard({ schedule, standings, setActiveTab }) {
+function Dashboard({ schedule, standings, setActiveTab, lang }) {
   const [countdown, setCountdown] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
   const [nextMatch, setNextMatch] = useState(null);
 
@@ -84,27 +85,27 @@ function Dashboard({ schedule, standings, setActiveTab }) {
     <div>
       {/* Title Section */}
       <div className="page-title-section">
-        <h1 className="page-title">World Cup 2026 Monitoring Dashboard</h1>
-        <p className="page-subtitle">Track live standings, match schedule, knockout bracket, and real-time results.</p>
+        <h1 className="page-title">{getTranslation(lang, 'dashboard')}</h1>
+        <p className="page-subtitle">{getTranslation(lang, 'liveStandingsDesc')}</p>
       </div>
 
       {/* Stats Bar */}
       <div className="stats-bar">
         <div className="stat-card">
-          <span className="stat-label">Total Matches</span>
+          <span className="stat-label">{getTranslation(lang, 'totalMatches')}</span>
           <span className="stat-value">{totalMatches}</span>
         </div>
         <div className="stat-card">
-          <span className="stat-label">Matches Played</span>
+          <span className="stat-label">{getTranslation(lang, 'matchesPlayed')}</span>
           <span className="stat-value">{matchesPlayed} / {totalMatches}</span>
         </div>
         <div className="stat-card">
-          <span className="stat-label">Goals Scored</span>
+          <span className="stat-label">{getTranslation(lang, 'goalsScored')}</span>
           <span className="stat-value">{totalGoals}</span>
         </div>
         <div className="stat-card">
-          <span className="stat-label">Total Groups</span>
-          <span className="stat-value">12 Groups</span>
+          <span className="stat-label">{getTranslation(lang, 'totalGroups')}</span>
+          <span className="stat-value">{getTranslation(lang, '12Groups')}</span>
         </div>
       </div>
 
@@ -112,7 +113,7 @@ function Dashboard({ schedule, standings, setActiveTab }) {
       {nextMatch && (
         <div className="countdown-banner">
           <div>
-            <div className="countdown-title">UPCOMING MATCH</div>
+            <div className="countdown-title">{getTranslation(lang, 'upcomingMatch')}</div>
             <div className="countdown-subtitle">
               {nextMatch.team1} vs {nextMatch.team2}
             </div>
@@ -120,25 +121,25 @@ function Dashboard({ schedule, standings, setActiveTab }) {
               🕒 {formatMatchTime(nextMatch)}
             </div>
             <div style={{ fontSize: '0.85rem', marginTop: '6px', opacity: 0.9 }}>
-              Venue: {nextMatch.venue}, {nextMatch.city}
+              {getTranslation(lang, 'venue')}: {nextMatch.venue}, {nextMatch.city}
             </div>
           </div>
           <div className="timer-box">
             <div className="time-segment">
               <span className="time-val">{String(countdown.days).padStart(2, '0')}</span>
-              <span className="time-lbl">Days</span>
+              <span className="time-lbl">{getTranslation(lang, 'days')}</span>
             </div>
             <div className="time-segment">
               <span className="time-val">{String(countdown.hours).padStart(2, '0')}</span>
-              <span className="time-lbl">Hours</span>
+              <span className="time-lbl">{getTranslation(lang, 'hours')}</span>
             </div>
             <div className="time-segment">
               <span className="time-val">{String(countdown.minutes).padStart(2, '0')}</span>
-              <span className="time-lbl">Mins</span>
+              <span className="time-lbl">{getTranslation(lang, 'mins')}</span>
             </div>
             <div className="time-segment">
               <span className="time-val">{String(countdown.seconds).padStart(2, '0')}</span>
-              <span className="time-lbl">Secs</span>
+              <span className="time-lbl">{getTranslation(lang, 'secs')}</span>
             </div>
           </div>
         </div>
@@ -154,14 +155,14 @@ function Dashboard({ schedule, standings, setActiveTab }) {
               <div className="card-title">
                 <span style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-live)' }}>
                   <span className="status-badge live" style={{ width: '12px', height: '12px', minWidth: 'auto', borderRadius: '50%', padding: 0 }}></span>
-                  MATCHES LIVE NOW
+                  {getTranslation(lang, 'matchesLiveNow')}
                 </span>
               </div>
               <div className="match-card-list">
                 {liveMatches.map(match => (
                   <div key={match.id} className="match-row" style={{ backgroundColor: 'var(--color-live-light)30', borderColor: 'var(--color-live)30' }}>
                     <div className="match-info-meta">
-                      <span className="match-stage" style={{ color: 'var(--color-live)' }}>Minute {match.minute}</span>
+                      <span className="match-stage" style={{ color: 'var(--color-live)' }}>{getTranslation(lang, 'minute')} {match.minute}</span>
                       <span className="match-venue">{match.city}</span>
                     </div>
                     <div className="match-teams-score">
@@ -177,7 +178,7 @@ function Dashboard({ schedule, standings, setActiveTab }) {
                         <span className="team-name">{match.team2}</span>
                       </div>
                     </div>
-                    <span className="status-badge live">LIVE</span>
+                    <span className="status-badge live">{getTranslation(lang, 'live')}</span>
                   </div>
                 ))}
               </div>
@@ -187,9 +188,9 @@ function Dashboard({ schedule, standings, setActiveTab }) {
           {/* Today's schedule */}
           <div className="card">
             <div className="card-title">
-              <span>Today's Matches</span>
+              <span>{getTranslation(lang, 'todayMatches')}</span>
               <button onClick={() => setActiveTab('schedule')} style={{ fontSize: '0.85rem', color: 'var(--color-accent)', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '4px' }}>
-                Full Schedule <ArrowRight size={14} />
+                {getTranslation(lang, 'fullSchedule')} <ArrowRight size={14} />
               </button>
             </div>
             {todayMatches.length > 0 ? (
@@ -214,14 +215,14 @@ function Dashboard({ schedule, standings, setActiveTab }) {
                       </div>
                     </div>
                     <span className={`status-badge ${match.status.toLowerCase()}`}>
-                      {match.status === 'LIVE' ? 'LIVE' : match.status === 'FINISHED' ? 'FINISHED' : 'SCHEDULED'}
+                      {match.status === 'LIVE' ? getTranslation(lang, 'live') : match.status === 'FINISHED' ? getTranslation(lang, 'finished') : getTranslation(lang, 'scheduled')}
                     </span>
                   </div>
                 ))}
               </div>
             ) : (
               <p style={{ textAlign: 'center', color: 'var(--text-secondary)', padding: '24px 0' }}>
-                No matches scheduled for today.
+                {getTranslation(lang, 'noMatchesToday')}
               </p>
             )}
           </div>
@@ -231,9 +232,9 @@ function Dashboard({ schedule, standings, setActiveTab }) {
         <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
           <div className="card" style={{ padding: '20px' }}>
             <div className="card-title" style={{ marginBottom: '16px' }}>
-              <span>Standings Preview</span>
+              <span>{getTranslation(lang, 'standingsPreview')}</span>
               <button onClick={() => setActiveTab('standings')} style={{ fontSize: '0.85rem', color: 'var(--color-accent)', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '4px' }}>
-                All Groups <ArrowRight size={14} />
+                {getTranslation(lang, 'allGroups')} <ArrowRight size={14} />
               </button>
             </div>
             {standings.slice(0, 2).map((groupData, idx) => (
@@ -245,10 +246,10 @@ function Dashboard({ schedule, standings, setActiveTab }) {
                   <table className="group-table">
                     <thead>
                       <tr>
-                        <th className="team-col">Team</th>
-                        <th>P</th>
-                        <th>GD</th>
-                        <th>Pts</th>
+                        <th className="team-col">{getTranslation(lang, 'team')}</th>
+                        <th>{getTranslation(lang, 'played')}</th>
+                        <th>{getTranslation(lang, 'gd')}</th>
+                        <th>{getTranslation(lang, 'pts')}</th>
                       </tr>
                     </thead>
                     <tbody>

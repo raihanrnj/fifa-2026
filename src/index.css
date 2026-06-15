@@ -738,6 +738,42 @@ button {
   footer {
     padding-bottom: 88px !important;
   }
+  
+  /* Mobile Match Row Layout Fixes */
+  .match-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 16px;
+  }
+  
+  .match-info-meta {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 8px;
+  }
+  
+  .match-teams-score {
+    width: 100%;
+    gap: 12px;
+  }
+  
+  .team-name {
+    font-size: 0.9rem;
+    white-space: normal;
+  }
+  
+  .score-display {
+    min-width: 60px;
+    padding: 6px 10px;
+    font-size: 1rem;
+  }
+  
+  .status-badge {
+    width: 100%;
+  }
 }
 
 .page-title-section {

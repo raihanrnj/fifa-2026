@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { Search, MapPin, Calendar, Award } from 'lucide-react';
 import { parseMatchDateTime, formatMatchTime, getTodayDateStringWIB } from '../utils/timeZoneHelper';
+import { getTranslation } from '../utils/i18n';
 
-function Schedule({ schedule }) {
+function Schedule({ schedule, lang }) {
   const [filter, setFilter] = useState('all'); // 'all' | 'today' | 'group' | 'knockout'
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -58,8 +59,8 @@ function Schedule({ schedule }) {
     <div>
       {/* Title */}
       <div className="page-title-section">
-        <h1 className="page-title">Match Schedule & Results</h1>
-        <p className="page-subtitle">Browse upcoming matches and check latest scores.</p>
+        <h1 className="page-title">{getTranslation(lang, 'matchSchedule')}</h1>
+        <p className="page-subtitle">{getTranslation(lang, 'browseMatches')}</p>
       </div>
 
       {/* Filter and Search Bar */}
@@ -80,25 +81,25 @@ function Schedule({ schedule }) {
             className={`filter-btn ${filter === 'all' ? 'active' : ''}`}
             onClick={() => setFilter('all')}
           >
-            All Matches
+            {getTranslation(lang, 'allMatches')}
           </button>
           <button 
             className={`filter-btn ${filter === 'today' ? 'active' : ''}`}
             onClick={() => setFilter('today')}
           >
-            Today
+            {getTranslation(lang, 'today')}
           </button>
           <button 
             className={`filter-btn ${filter === 'group' ? 'active' : ''}`}
             onClick={() => setFilter('group')}
           >
-            Group Stage
+            {getTranslation(lang, 'groupStage')}
           </button>
           <button 
             className={`filter-btn ${filter === 'knockout' ? 'active' : ''}`}
             onClick={() => setFilter('knockout')}
           >
-            Knockout Stage
+            {getTranslation(lang, 'knockoutStage')}
           </button>
         </div>
 
@@ -112,7 +113,7 @@ function Schedule({ schedule }) {
         }}>
           <input 
             type="text" 
-            placeholder="Search teams, stadiums, or cities..."
+            placeholder={getTranslation(lang, 'searchPlaceholder')}
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             style={{
@@ -200,7 +201,7 @@ function Schedule({ schedule }) {
                   {/* Status Badge */}
                   <div>
                     <span className={`status-badge ${match.status.toLowerCase()}`}>
-                      {match.status === 'LIVE' ? `LIVE (${match.minute || '75\''})` : match.status === 'FINISHED' ? 'FINISHED' : 'SCHEDULED'}
+                      {match.status === 'LIVE' ? `${getTranslation(lang, 'live')} (${match.minute || '75\''})` : match.status === 'FINISHED' ? getTranslation(lang, 'finished') : getTranslation(lang, 'scheduled')}
                     </span>
                   </div>
                 </div>
@@ -210,8 +211,8 @@ function Schedule({ schedule }) {
         ))
       ) : (
         <div className="card" style={{ textAlign: 'center', padding: '40px 20px', color: 'var(--text-secondary)' }}>
-          <p style={{ fontSize: '1.1rem', fontWeight: 600, marginBottom: '8px' }}>No matches found</p>
-          <p style={{ fontSize: '0.9rem' }}>Try adjusting your filters or search keywords.</p>
+          <p style={{ fontSize: '1.1rem', fontWeight: 600, marginBottom: '8px' }}>{getTranslation(lang, 'noMatchesFound')}</p>
+          <p style={{ fontSize: '0.9rem' }}>{getTranslation(lang, 'tryAdjustingFilters')}</p>
         </div>
       )}
     </div>
