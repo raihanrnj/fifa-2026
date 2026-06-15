@@ -202,7 +202,7 @@ function App() {
         fontSize: '0.85rem'
       }}>
         <div style={{ maxWidth: '1280px', margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '12px' }}>
-          <p>© 2026 RNJ Sport FIFA World Cup Monitor. Scrapes data from worldcupmatchtime.com every 30 minutes.</p>
+          <p>© 2026 RNJ Sport FIFA World Cup Monitor. Built by Raihan.</p>
           <div style={{ display: 'flex', gap: '16px' }}>
             <a href="#" onClick={() => setActiveTab('dashboard')} style={{ fontWeight: 600 }}>Home</a>
             <a href="#" onClick={() => setActiveTab('schedule')} style={{ fontWeight: 600 }}>Jadwal</a>
