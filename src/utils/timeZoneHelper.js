@@ -364,3 +364,24 @@ export function processBracket(bracketData) {
     }
   };
 }
+
+/**
+ * Generates a Google Calendar event URL for a given match.
+ */
+export function getGoogleCalendarUrl(match) {
+  const startDate = parseMatchDateTime(match);
+  if (!startDate) return '#';
+  
+  // Match duration: 2 hours
+  const endDate = new Date(startDate.getTime() + 2 * 60 * 60 * 1000);
+  
+  const formatCalDate = (date) => {
+    return date.toISOString().replace(/-|:|\.\d\d\d/g, '');
+  };
+  
+  const title = encodeURIComponent(`FIFA 2026: ${match.team1} vs ${match.team2}`);
+  const details = encodeURIComponent(`FIFA World Cup 2026\nStage: ${match.group || match.stage || 'Knockout'}`);
+  const location = encodeURIComponent(`${match.venue}, ${match.city}`);
+  
+  return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${formatCalDate(startDate)}/${formatCalDate(endDate)}&details=${details}&location=${location}`;
+}

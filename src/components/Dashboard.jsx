@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, AlertCircle, Clock } from 'lucide-react';
-import { parseMatchDateTime, formatMatchTime, getTodayDateStringWIB } from '../utils/timeZoneHelper';
+import { ArrowRight, AlertCircle, Clock, CalendarPlus } from 'lucide-react';
+import { parseMatchDateTime, formatMatchTime, getTodayDateStringWIB, getGoogleCalendarUrl } from '../utils/timeZoneHelper';
 import { getTranslation } from '../utils/i18n';
 
 function Dashboard({ schedule, standings, setActiveTab, lang }) {
@@ -214,9 +214,38 @@ function Dashboard({ schedule, standings, setActiveTab, lang }) {
                         <span className="team-name">{match.team2}</span>
                       </div>
                     </div>
-                    <span className={`status-badge ${match.status.toLowerCase()}`}>
-                      {match.status === 'LIVE' ? getTranslation(lang, 'live') : match.status === 'FINISHED' ? getTranslation(lang, 'finished') : getTranslation(lang, 'scheduled')}
-                    </span>
+                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '8px' }}>
+                      <span className={`status-badge ${match.status.toLowerCase()}`}>
+                        {match.status === 'LIVE' ? getTranslation(lang, 'live') : match.status === 'FINISHED' ? getTranslation(lang, 'finished') : getTranslation(lang, 'scheduled')}
+                      </span>
+                      {match.status === 'UPCOMING' && (
+                        <a 
+                          href={getGoogleCalendarUrl(match)}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '4px',
+                            fontSize: '0.7rem',
+                            fontWeight: 600,
+                            color: '#FFFFFF',
+                            backgroundColor: '#4285F4',
+                            padding: '4px 8px',
+                            borderRadius: '4px',
+                            textDecoration: 'none',
+                            transition: 'background-color 0.2s',
+                            boxShadow: '0 1px 3px rgba(0,0,0,0.1)'
+                          }}
+                          onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#3367D6'}
+                          onMouseOut={(e) => e.currentTarget.style.backgroundColor = '#4285F4'}
+                          title={getTranslation(lang, 'addToCalendar')}
+                        >
+                          <CalendarPlus size={12} />
+                          {getTranslation(lang, 'addToCalendar')}
+                        </a>
+                      )}
+                    </div>
                   </div>
                 ))}
               </div>

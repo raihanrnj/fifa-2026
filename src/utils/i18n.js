@@ -63,7 +63,8 @@ export const translations = {
     noMatchesFound: "Tidak ada pertandingan ditemukan",
     tryAdjustingFilters: "Coba sesuaikan filter atau kata kunci pencarian Anda.",
     bracketNotAvailable: "Data bagan (bracket) belum tersedia.",
-    match: "Pertandingan"
+    match: "Pertandingan",
+    addToCalendar: "Tambah ke Kalender"
   },
   en: {
     dashboard: "Dashboard",
@@ -129,7 +130,8 @@ export const translations = {
     noMatchesFound: "No matches found",
     tryAdjustingFilters: "Try adjusting your filters or search keywords.",
     bracketNotAvailable: "Bracket data is not available yet.",
-    match: "Match"
+    match: "Match",
+    addToCalendar: "Add to Calendar"
   }
 };
 
